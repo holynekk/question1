@@ -1,13 +1,10 @@
+import datetime
+from django.utils import timezone
 from rest_framework import generics
 from django.db.models import Count
 from .models import NavigationRecord, Vehicle
 from .serializers import NavigationRecordSerializer, VehicleSerializer
 from .utils import create_random_plate
-
-import datetime
-import random
-from django.utils import timezone
-
 
 
 def latest_records():
@@ -28,13 +25,13 @@ def latest_records():
     # Return to view
     return query_set
 
-class recent_records_view(generics.ListCreateAPIView):
+class recent_records_view(generics.ListAPIView):
     # Get the queryset by calling latest_records function
     queryset = latest_records()
     serializer_class = NavigationRecordSerializer
 
 
-class vehicles_view(generics.ListCreateAPIView):
+class vehicles_view(generics.ListAPIView):
     queryset = Vehicle.objects.all()
     serializer_class = VehicleSerializer
 

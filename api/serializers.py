@@ -3,6 +3,7 @@ from .models import NavigationRecord, Vehicle
 
 class NavigationRecordSerializer(serializers.ModelSerializer):
     vehicle_plate = serializers.CharField(source='vehicle.plate')
+    datetime = serializers.DateTimeField(source='format_date')
 
     class Meta:
         model = NavigationRecord

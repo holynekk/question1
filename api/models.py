@@ -8,6 +8,8 @@ class NavigationRecord(models.Model):
     latitude = models.FloatField(default=0)
     longitude = models.FloatField(default=0)
     
+    def format_date(self):
+        return self.datetime.strftime(("%d.%m.%Y %H:%M:%S"))
 
 class Vehicle(models.Model):
     plate = models.CharField(max_length=20, unique=True)

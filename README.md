@@ -1,6 +1,7 @@
-# Evreka Technical Question Set - Question 2
+# Evreka Technical Question Set - Question 1
 
 I implemented all relevant functionality inside api app at BASE_DIR.
+
 The function that return requested data is in BASE_DIR/api/views.py
 
 ## Small Description
